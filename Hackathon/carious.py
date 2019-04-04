@@ -8,10 +8,10 @@ size = width, height = 1080, 720
 screen = pygame.display.set_mode(size)
 
 #picture locations
-car = "/Hackathon/city/car.jpg"
-food = "/Hackathon/city/food.jpg"
-stanford = "/Hackathon/city/stanford.jpg"
-events = "/Hackathon/city/events.jpg"
+car = "city/car.jpg"
+food = "city/food.jpg"
+stanford = "city/stanford.jpg"
+events = "city/events.jpg"
 
 #variables to load pictures with resize function to scale to window
 firstpic = pygame.transform.scale(pygame.image.load(car), size)
