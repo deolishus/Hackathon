@@ -44,8 +44,6 @@ def third_screen():
                 if event.key == pygame.K_RIGHT:
                     fourth_screen()
 
-
-
 def second_screen():
     while True:
         screen.blit(secondpic, (0,0))
@@ -57,8 +55,7 @@ def second_screen():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
                     third_screen()
-
-
+                    
 def first_screen():
     while True:
         screen.blit(firstpic, (0,0))
