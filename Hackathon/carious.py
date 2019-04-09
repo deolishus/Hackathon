@@ -22,6 +22,7 @@ fourthpic = pygame.transform.scale(pygame.image.load(events), size)
 def quit_screen():
     pygame.quit()
     sys.exit()
+    quit()
 
 def fourth_screen():
     while True:
@@ -31,6 +32,8 @@ def fourth_screen():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
                     third_screen()
+                if event.key == pygame.K_ESCAPE:
+                    quit_screen()
 
 def third_screen():
     while True:
@@ -43,6 +46,8 @@ def third_screen():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
                     fourth_screen()
+            if event.key == pygame.K_ESCAPE:
+                quit_screen()
 
 def second_screen():
     while True:
@@ -55,7 +60,9 @@ def second_screen():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
                     third_screen()
-                    
+            if event.key == pygame.K_ESCAPE:
+                quit_screen()
+
 def first_screen():
     while True:
         screen.blit(firstpic, (0,0))
@@ -64,10 +71,13 @@ def first_screen():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
                     second_screen()
+                if event.key == pygame.K_ESCAPE:
+                    quit_screen()
 
 while True:
     for event in keyboard.get():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 quit_screen()
+
     first_screen()
