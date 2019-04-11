@@ -9,12 +9,13 @@ screen = pygame.display.set_mode(size)
 pygame.init()
 pygame.mixer.init()
 
-video = "Videos/sample.mpg"
+sample = "Videos/sample.mp4"
 clock = pygame.time.Clock()
 
 ####screen = pygame.display.set_mode((800, 600))
-video = pygame.movie.Movie(video)
+video = pygame.movie.Movie(sample)
 w,h = video.get_size()
+
 #screen = pygame.display.set_mode((w,h))
 video.set_display(screen,(0,0,500,500))
 video.play()
