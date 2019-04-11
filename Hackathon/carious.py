@@ -8,16 +8,18 @@ size = width, height = 1080, 720
 screen = pygame.display.set_mode(size)
 
 #picture locations
-car = "city/car.jpg"
-food = "city/food.jpg"
-stanford = "city/stanford.jpg"
-events = "city/events.jpg"
+car = "Photos/car.jpg"
+food = "Photos/food.jpg"
+stanford = "Photos/stanford.jpg"
+events = "Photos/events.jpg"
+
 
 #variables to load pictures with resize function to scale to window
 firstpic = pygame.transform.scale(pygame.image.load(car), size)
 secondpic = pygame.transform.scale(pygame.image.load(food), size)
 thirdpic = pygame.transform.scale(pygame.image.load(stanford), size)
 fourthpic = pygame.transform.scale(pygame.image.load(events), size)
+danvideo = pygame.transform.scale()
 
 def quit_screen():
     pygame.quit()
