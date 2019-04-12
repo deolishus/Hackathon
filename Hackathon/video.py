@@ -1,25 +1,12 @@
 import pygame
+import sys
+import subprocess
+from time import sleep
 
-FPS = 60
+file = 'Videos/sample.mp4'
+omxprocess = subprocess.Popen(['omxplayer', file], stdin = subprocess.PIPE, stdout = None, stderr = None, bufsize = 0)
+sleep(3)
 
-pygame.init()
-#pygame.mixer.quit()
-clock = pygame.time.Clock()
-movie = pygame.movie.Movie("/Videos/sample.mpg")
-screen = pygame.display.set_mode(movie.get_size())
-movie_screen = pygame.Surface(movie.get_size()).convert()
+#omxprocess.stdin.write('q')
 
-movie.set_display(movie_screen)
-movie.play()
-
-playing = True
-while playing:
-    for event in pygame.event.get():
-        movie.stop()
-        playing = False
-        
-screen.blit(movie_screen, (0,0))
-pygame.display.update()
-clock.tick(FPS)
-
-pygame.quit()
+sleep(3)

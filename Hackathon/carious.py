@@ -7,12 +7,11 @@ pygame.init()
 size = width, height = 1080, 720
 screen = pygame.display.set_mode(size)
 
-#picture locations
+#photos location
 car = "Photos/car.jpg"
 food = "Photos/food.jpg"
 stanford = "Photos/stanford.jpg"
 events = "Photos/events.jpg"
-
 
 #variables to load pictures with resize function to scale to window
 firstpic = pygame.transform.scale(pygame.image.load(car), size)
@@ -20,7 +19,7 @@ secondpic = pygame.transform.scale(pygame.image.load(food), size)
 thirdpic = pygame.transform.scale(pygame.image.load(stanford), size)
 fourthpic = pygame.transform.scale(pygame.image.load(events), size)
 
-
+                               
 def quit_screen():
     pygame.quit()
     sys.exit()
@@ -33,10 +32,11 @@ def fourth_screen():
         for event in keyboard.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
-                    third_screen()
+                    return()
                 if event.key == pygame.K_ESCAPE:
-                    quit_screen()
-
+                    return()
+    
+    
 def third_screen():
     while True:
         screen.blit(thirdpic, (0,0))
@@ -44,12 +44,12 @@ def third_screen():
         for event in keyboard.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
-                    second_screen()
+                    return()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
                     fourth_screen()
             if event.key == pygame.K_ESCAPE:
-                quit_screen()
+                    quit_screen()
 
 def second_screen():
     while True:
@@ -58,7 +58,7 @@ def second_screen():
         for event in keyboard.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
-                    first_screen()
+                    return()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
                     third_screen()
@@ -76,10 +76,4 @@ def first_screen():
                 if event.key == pygame.K_ESCAPE:
                     quit_screen()
 
-while True:
-    for event in keyboard.get():
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                quit_screen()
-
-    first_screen()
+first_screen()
