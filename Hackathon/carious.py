@@ -19,7 +19,7 @@ firstpic = pygame.transform.scale(pygame.image.load(car), size)
 secondpic = pygame.transform.scale(pygame.image.load(food), size)
 thirdpic = pygame.transform.scale(pygame.image.load(stanford), size)
 fourthpic = pygame.transform.scale(pygame.image.load(events), size)
-danvideo = pygame.transform.scale()
+
 
 def quit_screen():
     pygame.quit()
